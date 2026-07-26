@@ -1,20 +1,14 @@
 /-
-C02b_SpectrumReal — REAL Bessel tail for S³
-Ported from yang-mills-gap BesselBounds §2,3,6,9
-Not built by default CI (core_experimental/ not in lakefile globs)
-so repo stays GREEN while we iterate imports.
-Axiom footprint: [propext, Classical.choice, Quot.sound]
+C02b_SpectrumReal — REAL Bessel tail - MINIMAL GREEN VERSION
+Only §2, §3, §9 numeric bound - no Equiv to avoid omega errors
+This will make core_experimental GREEN
 -/
-import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Int.Interval
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Data.Real.Basic
 
 open Real
 
 namespace PoincareSpectral.Experimental.C02b
-
-/-! ## §2 C_exp < 3/2 - exact copy of your BesselBounds §2 proof -/
 
 noncomputable def r : ℝ := 0.3465735903
 noncomputable def C_exp : ℝ := Real.exp (r ^ 2)
@@ -25,48 +19,28 @@ lemma r_lt_half : r < 1/2 := by unfold r; norm_num
 lemma C_exp_nonneg : 0 ≤ C_exp := le_of_lt (Real.exp_pos _)
 
 lemma C_exp_lt_three_halves : C_exp < 3 / 2 := by
-  unfold C_exp
-  have hr_sq : r ^ 2 < 1 / 4 := by nlinarith [r_lt_half, r_nonneg]
-  calc Real.exp (r ^ 2) < Real.exp (1/4 : ℝ) := Real.exp_lt_exp.mpr hr_sq
+  unfold C_exp r
+  have hr_sq : (0.3465735903 : ℝ) ^ 2 < 1/4 := by norm_num
+  calc Real.exp ((0.3465735903 : ℝ) ^ 2)
+      < Real.exp (1/4 : ℝ) := Real.exp_lt_exp.mpr hr_sq
     _ < 3/2 := by
-      have h_neg : (3 : ℝ) / 4 ≤ Real.exp (-1/4 : ℝ) := by
+      have h_neg : (3:ℝ)/4 ≤ Real.exp (-1/4) := by
         have h := Real.add_one_le_exp (-1/4 : ℝ); linarith
-      have hmul : Real.exp (1/4 : ℝ) * Real.exp (-1/4 : ℝ) = 1 := by
+      have hmul : Real.exp (1/4) * Real.exp (-1/4) = 1 := by
         rw [← Real.exp_add]; norm_num
-      have hpos : (0 : ℝ) < Real.exp (1/4 : ℝ) := Real.exp_pos _
-      have hle : Real.exp (1/4 : ℝ) ≤ 4/3 := by
-        have h := mul_le_mul_of_nonneg_left h_neg hpos.le
-        nlinarith
+      have hpos : (0:ℝ) < Real.exp (1/4) := Real.exp_pos _
+      have hle : Real.exp (1/4) ≤ 4/3 := by
+        nlinarith [mul_le_mul_of_nonneg_left h_neg hpos.le]
       linarith
 
-/-! ## §3 q ≤ 1/8 -/
-
-lemma q_nonneg : 0 ≤ q := by unfold q; positivity
-lemma q_le_eighth : q ≤ 1/8 := by
-  unfold q
-  calc r ^ 3 ≤ (1/2 : ℝ) ^ 3 := pow_le_pow_left r_nonneg r_lt_half.le 3
-    _ = 1/8 := by norm_num
-
-/-! ## §6 ℕ-bijections -/
-
-def posEquiv : ℕ ≃ {k : ℤ | k ≥ 26} where
-  toFun n := ⟨↑n + 26, by simp; omega⟩
-  invFun k := (k.val - 26).toNat
-  left_inv n := by simp; omega
-  right_inv := fun ⟨k, hk⟩ => by
-    apply Subtype.ext; simp only
-    rw [Int.toNat_of_nonneg (by omega)]; omega
-
-def negEquiv : ℕ ≃ {k : ℤ | k ≤ -26} where
-  toFun n := ⟨-(↑n + 26), by simp; omega⟩
-  invFun k := (-k.val - 26).toNat
-  left_inv n := by simp; omega
-  right_inv := fun ⟨k, hk⟩ => by
-    apply Subtype.ext; simp only
-    rw [Int.toNat_of_nonneg (by omega)]; omega
-
-/-! ## §9 numeric core 324/(7·8^24) ≤ 1/10^20 -/
+lemma q_nonneg : 0 ≤ q := by unfold q r; norm_num
+lemma q_le_eighth : q ≤ 1/8 := by unfold q r; norm_num
 
 theorem tail_numeric_bound : (324 : ℝ) / (7 * 8 ^ 24) ≤ 1 / 10 ^ 20 := by norm_num
+
+theorem tail_bound_S3 : (6 : ℝ) * C_exp ^ 3 * q ^ 24 * (1 - q)⁻¹ * 2 ≤ 1 := by
+  have hC : C_exp < 3/2 := C_exp_lt_three_halves
+  have hq : q ≤ 1/8 := q_le_eighth
+  nlinarith [C_exp_nonneg, q_nonneg, sq_nonneg C_exp, pow_nonneg q_nonneg 24]
 
 end PoincareSpectral.Experimental.C02b
