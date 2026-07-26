@@ -8,7 +8,7 @@ require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git" @ "v4.12.0"
 
 @[default_target]
-lean_lib Lean where
+lean_lib core where
   srcDir := "."
 
 @[default_target]
