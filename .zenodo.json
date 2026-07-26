@@ -1,0 +1,41 @@
+{
+  "title": "Poincaré Spectral Tower — Formal Proof in Lean 4.12.0",
+  "description": "Formalized analytic core of Poincaré homology sphere spectral gap: Bessel bounds on S³ (rational 324/(7*8^24) ≤1e-20, Real.exp r²<3/2), geometric Weyl tail q=1/8 with tail_26=q^26/(1-q)≤1e-20 and Summable, conductor positivity gap=1-tail>0, Mellin transform of Bessel K_ν as mellinBessel ν s =2^{s-2} Γ((s+ν)/2)Γ((s-ν)/2) with positivity, and spectral zeta model Summable (q^(2)^n). 11 files GREEN, 2381 modules, 56 workflow runs, CI #53 ce5915d. Built with Lean 4.12.0 + mathlib4. Main theorems: C10_Main.poincare_main, poincare_spectral_determinant_pos. Candidate contributions to Mathlib.Analysis.SpecialFunctions.Bessel.Mellin.",
+  "creators": [
+    {
+      "name": "Fox, David J.",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0000-0000-0000"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Lean4",
+    "mathlib4",
+    "formal proof",
+    "Poincare homology sphere",
+    "spectral gap",
+    "Bessel function",
+    "Mellin transform",
+    "Gamma function",
+    "spectral zeta",
+    "Weyl law",
+    "conductor",
+    "proof assistant"
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "communities": [
+    {
+      "identifier": "leanprover-community"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/DavidFox998/poincare-spectral",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "version": "v1.0.0"
+}
