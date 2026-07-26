@@ -34,12 +34,6 @@ lemma q_nonneg : 0 ≤ q := by unfold q r; positivity
 lemma q_lt_one : q < 1 := by unfold q r; norm_num
 lemma q_le_eighth : q ≤ 1/8 := by unfold q r; norm_num
 
-lemma inv_one_sub_q_le : (1 - q)⁻¹ ≤ 8/7 := by
-  have hpos : 0 < 1 - q := by linarith [q_lt_one]
-  have h1 : (7:ℝ)/8 ≤ 1 - q := by linarith [q_le_eighth]
-  calc (1 - q)⁻¹ ≤ ((7:ℝ)/8)⁻¹ := inv_anti₀ (by norm_num) h1
-    _ = 8/7 := by norm_num
-
 theorem exp_bounds : C_exp < 3/2 ∧ q ≤ 1/8 :=
   ⟨C_exp_lt_three_halves, q_le_eighth⟩
 
