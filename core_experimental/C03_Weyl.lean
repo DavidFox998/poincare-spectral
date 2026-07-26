@@ -10,10 +10,8 @@ lemma q_le : q ≤ 1/8 := by norm_num [q]
 
 theorem tail_geometric_le : C_tail ≤ 1 / 10 ^ 20 := by native_decide
 
-theorem weyl_tail_bound : C_tail ≤ 1 := by norm_num
+theorem weyl_tail_bound : C_tail ≤ 1 := by native_decide
 
--- Placeholders for the Finset.sum_add_tsum_compl split
--- Once C02b+C02c green, we add Summable imports
 theorem sum_split_placeholder : C_tail ≤ 1 / 10 ^ 20 := tail_geometric_le
 
 end PoincareSpectral.Experimental.C03
