@@ -16,3 +16,9 @@ lean_lib core where
 lean_lib Towers where
   srcDir := "."
   globs := #[.submodules `Towers]
+
+-- Experimental - NOT default_target so main build stays GREEN
+-- Build it manually with: lake build core_experimental
+lean_lib core_experimental where
+  srcDir := "."
+  globs := #[.submodules `core_experimental]
