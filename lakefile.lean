@@ -9,8 +9,8 @@ require mathlib from git
 
 @[default_target]
 lean_lib core where
-  srcDir := "."
+  srcDir := "core"
 
 @[default_target]
 lean_lib Towers where
-  srcDir := "."
+  srcDir := "Towers"
