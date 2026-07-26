@@ -1,5 +1,5 @@
 # Poincaré Spectral Tower — Formal Proof in Lean 4.12.0
-### A Community Report on Formalizing Explicit Spectral Bounds, Mellin Transforms, and Zeta Convergence for the Poincaré Homology Sphere
+A Community Report on Formalizing Explicit Spectral Bounds, Mellin Transforms, and Zeta Convergence for the Poincaré Homology Sphere
 
 **Author: David Fox (DavidFox998) | Repo: poincare-spectral | CI #53 `ce5915d` GREEN | 56 runs | 2381 modules | Lean 4.12.0 + mathlib4**
 
