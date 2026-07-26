@@ -14,6 +14,3 @@ lean_lib Towers where
 @[default_target]
 lean_lib Spectral where
   srcDir := "Spectral"
-
-lean_exe main where
-  root := `Main
