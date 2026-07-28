@@ -1,0 +1,61 @@
+import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Tactic
+
+namespace PoincareSpectral.Experimental.C12
+
+noncomputable def q : ℝ := 1/8
+noncomputable def tail_26 : ℝ := q ^ 26 * (1 - q)⁻¹
+noncomputable def conductor_gap : ℝ := 1 - tail_26
+
+-- Heat trace model: Θ(t) = Σ exp(-t) * q^n  ≤ Σ q^n  for t≥0
+-- Majorant is still q, so same summability as C04
+noncomputable def heatTerm (t : ℝ) (n : ℕ) : ℝ := Real.exp (-t) * q ^ n
+noncomputable def heatTrace (t : ℝ) : ℝ := ∑' n : ℕ, heatTerm t n
+
+lemma q_nonneg : 0 ≤ q := by unfold q; norm_num
+lemma q_lt_one : q < 1 := by unfold q; norm_num
+lemma q_pos : 0 < q := by unfold q; norm_num
+
+lemma exp_nonneg : ∀ t : ℝ, 0 ≤ Real.exp (-t) := by intro t; exact le_of_lt (Real.exp_pos _)
+lemma exp_le_one_of_nonneg : ∀ t : ℝ, 0 ≤ t → Real.exp (-t) ≤ 1 := by
+  intro t ht
+  rw [Real.exp_le_one_iff]
+  linarith
+
+lemma summable_q : Summable (fun n : ℕ => q ^ n) :=
+  summable_geometric_of_lt_one q_nonneg q_lt_one
+
+lemma summable_heat (t : ℝ) : Summable (fun n : ℕ => heatTerm t n) := by
+  unfold heatTerm
+  exact summable_q.mul_left _
+
+lemma tail_le : tail_26 ≤ 1/10^20 := by unfold tail_26 q; norm_num
+lemma gap_pos : 0 < conductor_gap := by unfold conductor_gap tail_26 q; norm_num
+
+lemma heatTrace_nonneg (t : ℝ) : 0 ≤ heatTrace t := by
+  unfold heatTrace heatTerm
+  apply Summable.tsum_nonneg
+  intro n
+  apply mul_nonneg (exp_nonneg t) (pow_nonneg q_nonneg _)
+
+lemma heatTrace_le_tsum_q (t : ℝ) (ht : 0 ≤ t) : heatTrace t ≤ ∑' n : ℕ, q ^ n := by
+  unfold heatTrace heatTerm
+  apply Summable.tsum_le_tsum
+  · intro n; apply mul_nonneg (exp_nonneg t) (pow_nonneg q_nonneg _)
+  · exact summable_heat t
+  · exact summable_q
+  · intro n
+    have h : Real.exp (-t) ≤ 1 := exp_le_one_of_nonneg t ht
+    calc Real.exp (-t) * q ^ n ≤ 1 * q ^ n := by apply mul_le_mul_of_nonneg_right h (pow_nonneg q_nonneg _)
+      _ = q ^ n := by ring
+
+theorem poincare_heat_main (t : ℝ) (ht : 0 ≤ t) :
+  Summable (fun n => heatTerm t n) ∧ 0 ≤ heatTrace t ∧ heatTrace t ≤ ∑' n : ℕ, q ^ n :=
+  ⟨summable_heat t, heatTrace_nonneg t, heatTrace_le_tsum_q t ht⟩
+
+theorem poincare_heat_gap : 0 < conductor_gap ∧ Summable (fun n => q ^ n) :=
+  ⟨gap_pos, summable_q⟩
+
+end PoincareSpectral.Experimental.C12
