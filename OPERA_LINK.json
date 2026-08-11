@@ -1,0 +1,11 @@
+{
+  "repo": "poincare-spectral",
+  "act": "Act II second voice",
+  "gap": "spectral_gap = 1 - tail_26",
+  "q": "1/8",
+  "tail_N": 26,
+  "bound": "tail_26 ≤ 1e-20",
+  "theorem": "spectral_gap > 0",
+  "lean": "4.15.0",
+  "links": ["yang-mills-gap", "brothers-desert-proof", "hodge-abelian-boundaries"]
+}
