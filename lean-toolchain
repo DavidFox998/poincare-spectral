@@ -1,1 +1,1 @@
-echo "leanprover/lean4:v4.15.0" > lean-toolchain
+leanprover/lean4:v4.15.0
