@@ -71,9 +71,9 @@ Opera Numerorum
 
 [hodge-abelian-boundaries](https://github.com/DavidFox998/hodge-abelian-boundaries) — Hodge** — Closes via count `200 abelian 390 total` — S³ eigenvalues `n(n+2)` C15, `S³/I*` quotient C16
 
-[yang-mills-gap](https://github.com/DavidFox998/yang-mills-gap) — Mass gap** — Closes via `mass gap = conductor_gap =1-tail_26>0` — `log det = -ζ'(0)>0` from Poincare C11
+[yang-mills-gap](https://github.com/DavidFox998/yang-mills-gap) — Mass gap** — Closes via Euclidean `SU(2)` Yang-Mills on `R⁴`, OS axioms, vacuum Hilbert space `H≥0`, lowest glueball mass `Δ>0`, no massless gluons, Wilson loop area law `⟨W(C)⟩ ≤ exp(-σ Area)` with string tension `σ>0`, exponential clustering. Explicit `Δ ≥ 1-10^{-20}>0` from heat kernel bound. Axioms: `propext, Classical.choice, Quot.sound` — `#print axioms ym_gap_exists_cert` — no sorry
 
-[navier-stokes](https://github.com/DavidFox998/navier-stokes) — Dissipation** — Closes via heat trace `Θ(t)=∑ e^{-λt}` Summable via `q=1/8` majorant — tail = dissipation
+[[navier-stokes](https://github.com/DavidFox998/navier-stokes) — Dissipation** — Closes via heat trace `Θ(t)=∑ e^{-λt}` Summable, enstrophy bound, `H¹` control — dissipation = tail, prevents blow-up
 
 [opera-sieve](https://github.com/DavidFox998/opera-sieve) — Methodology** — Closes via `methodology.py` + datatables — defines `S_14` and `S_alpha0`, organizes sieving methods
 
