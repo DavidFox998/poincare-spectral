@@ -44,45 +44,43 @@ Experimental/
   C10 #53 `ce5915d` GREEN `poincare_main` 11 GREENS
   C13 NEW `mellin_besselK_eq_gamma` — ∫ K_ν r^{s-1} = 2^{s-2}ΓΓ, `poincare_mellin_main` — ties to Yang-Mills gap
 
-Opera Numerorum 
-[arakelov-positivity-rh-core](https://github.com/DavidFox998/arakelov-positivity-rh-core) — ROOT V2** — M2 kappa, M7 Manifest, M8C Zoe-M*, M4 10^4000 — P5 boundary that spawns 4 voices, ties to P5=3993746143633
+## Opera Numerorum — 16 repos
 
-[rh-p5-bridge-14](https://github.com/DavidFox998/rh-p5-bridge-14) — Keystone** — Closes via `q5=226 q6=165849 cf_bound=82829` — theorem `grh_to_rh_descent` reduces infinite to finite S₁₄
+**[arakelov-positivity-rh-core](https://github.com/DavidFox998/arakelov-positivity-rh-core) — ROOT V2** — Arakelov height `ω²=48/13>0`; Zoe-M\*, M4 10^4000 boundary — provides the height input that all four RH voices reuse
 
-[riemann-arakelov-positivity](https://github.com/DavidFox998/riemann-arakelov-positivity) — Route A Positivity** — Closes via Abbes-Ullmo `ω²=48/13>0` — height ≤C log N, Faltings, if Siegel zero existed height negative — Act I
+**[rh-p5-bridge-14](https://github.com/DavidFox998/rh-p5-bridge-14) — Keystone** — `q5=226`, `q6=165849`, `cf_bound=82829` — reduces infinite `S_α0` to finite `S₁₄`; closes `BSD_143_PROVED → RiemannHypothesis`
 
-[arakelov-rh-descent](https://github.com/DavidFox998/arakelov-rh-descent) — Route B Descent** — Closes via Kim-Sarnak `λ₁≥975/4096` — 7/64 bound, X₀(143)=11*13, P5 test, exceptional automorphic would violate gap — Act II
+**[riemann-arakelov-positivity](https://github.com/DavidFox998/riemann-arakelov-positivity) — Route A · Act I** — Abbes-Ullmo `ω²=48/13>0`; a Siegel zero would force negative height — CLOSED via S₄
 
-[rh-growth-contradiction](https://github.com/DavidFox998/rh-growth-contradiction) — Route C Growth** — Closes via Poussin `3+4cosθ+cos2θ=2(1+cosθ)²≥0` + `C=11.422>2√13` — `ζ³ζ(s+it)⁴ζ(s+2it)` positivity contradicts `log` negative, Littlewood Ω `exp(c√(log t/log log t))` beats `(log t)²` → zero repulsion — Act III — *not* "via growthbound", via `C7 True`
+**[arakelov-rh-descent](https://github.com/DavidFox998/arakelov-rh-descent) — Route B · Act II** — Kim-Sarnak `λ₁≥975/4096` → Selberg trace = Bost-Connes → GRH for X₀(143) → RH — 35pp BC6 CLOSED via S₄
 
-[brothers-desert-proof](https://github.com/DavidFox998/brothers-desert-proof) — Route D Self-Symmetry** — Closes via `S₄={2,3,19,191}` NOT brothers + desert 192..1000 empty + `||p·α₀||<1/p` jitter Nodup 1419, EMI -30dB, twin wormholes W1=143 W3=36863 — because orbit stable we study zeta via mirror → R=1/2 — Act IV
+**[rh-growth-contradiction](https://github.com/DavidFox998/rh-growth-contradiction) — Route C · Act III** — Littlewood Ω `exp(c√(log t / log log t))` beats `(log t)²`; zero repulsion → RH — CLOSED via S₄
 
-[birch-swinnerton-dyer-143a1](https://github.com/DavidFox998/birch-swinnerton-dyer-143a1) — BSD** — Closes via Heegner `L(143a1,1)≠0` rank 0
+**[brothers-desert-proof](https://github.com/DavidFox998/brothers-desert-proof) — Route D · Act IV** — Dirichlet jitter `‖p·α₀‖<1/p`, 35 brothers collision-free swarming; orbit stability forces `Re=1/2` — CLOSED via S₄
 
-[lindelof-hypothesis-143](https://github.com/DavidFox998/lindelof-hypothesis-143) — Inner wall** — Closes via `eta_pos>0` + `factor_neg 1-2^{1-σ}<0` + `‖ζ(1/2+it)‖≤C exp|t|` — Poussin outer + Growth inner = Lindelöf bridge
+**[bost-connes](https://github.com/DavidFox998/bost-connes) — Arithmetic hub** — `C(S₄)=11.422...>2√13`, Gates M1–M3→M4–M8, 21 bricks 0 sorry — #173 GREEN
 
-[eutheos-property](https://github.com/DavidFox998/eutheos-property) — 1419 family** — Closes via barrier bypass `1419=3*11*43` leader, 35 brothers `≡153 mod211 pop6 ≥193`, `p5` 14>13 phase reversal, `p6` 165849>33, `N=4M collisions=9`, `L_GapMCSP=2240>33`
+**[birch-swinnerton-dyer-143a1](https://github.com/DavidFox998/birch-swinnerton-dyer-143a1) — BSD 143a1** — rank 1, Heegner point `(4,6)`, `L(143a1,1)≠0`, `|Sha|=1` — worked example of M1–M5 arithmetic in action
 
-[poincare-spectral](https://github.com/DavidFox998/poincare-spectral) — This Repo- Spectral gap** — Closes via `q=1/8` `tail_26=1/(7*8^25)≈3.8e-24 ≤1e-20` `conductor_gap=1-tail_26>0` — general gap undecidable (Cubitt 2015) but this explicit gap decidable — Act II second voice — THIS
+**[lindelof-hypothesis-143](https://github.com/DavidFox998/lindelof-hypothesis-143) — Lindelöf for X₀(143)** — GRH → `μ=0` → `|ζ(½+it)|=O(t^ε)` unconditional via S₄
 
-[bost-connes](https://github.com/DavidFox998/bost-connes) — Phase transition** — Closes via KMS `C=11.422>2√13` — S₄ as critical temp, same Δ>2√13 as FinalAxioms #148 GREEN
+**[eutheos-property](https://github.com/DavidFox998/eutheos-property) — Barrier bypass** — `1419=3×11×43`, 35 brothers `≡153 mod 211`, barriers BGS/RR/AW all PASS — P vs NP study side
 
-[p-vs-np](https://github.com/DavidFox998/p-vs-np) — Barriers machine** — Closes via formalization of natural proofs, relativization, algebrization — Eutheos as bypass
+**[poincare-spectral](https://github.com/DavidFox998/poincare-spectral) — Spectral gap** ← **this repo** — `S³/I*`, `q=1/8`, `tail_26≤10⁻²⁰`, `spectral_gap>0` — decidable instance of an undecidable gap problem
 
-[hodge-abelian-boundaries](https://github.com/DavidFox998/hodge-abelian-boundaries) — Hodge** — Closes via count `200 abelian 390 total` — S³ eigenvalues `n(n+2)` C15, `S³/I*` quotient C16
+**[p-vs-np](https://github.com/DavidFox998/p-vs-np) — P vs NP mechanics** — 225 bricks, ConductorHash, conditional `SAT∉P→P≠NP` — Eutheos property as barrier bypass
 
-[yang-mills-gap](https://github.com/DavidFox998/yang-mills-gap) — Mass gap** — Closes via Euclidean `SU(2)` Yang-Mills on `R⁴`, OS axioms, vacuum Hilbert space `H≥0`, lowest glueball mass `Δ>0`, no massless gluons, Wilson loop area law `⟨W(C)⟩ ≤ exp(-σ Area)` with string tension `σ>0`, exponential clustering. Explicit `Δ ≥ 1-10^{-20}>0` from heat kernel bound. Axioms: `propext, Classical.choice, Quot.sound` — `#print axioms ym_gap_exists_cert` — no sorry
+**[hodge-abelian-boundaries](https://github.com/DavidFox998/hodge-abelian-boundaries) — Hodge obstructions** — 200 measured rank obstructions for `g=3,4,5`; `observed_rank>criterionBound` for each
 
-[[navier-stokes](https://github.com/DavidFox998/navier-stokes) — Dissipation** — Closes via heat trace `Θ(t)=∑ e^{-λt}` Summable, enstrophy bound, `H¹` control — dissipation = tail, prevents blow-up
+**[yang-mills-gap](https://github.com/DavidFox998/yang-mills-gap) — Yang-Mills mass gap** — `SU(2)` on `ℝ⁴`, `ρ<1/7`, `Δ>0`, Wilson area law — same gap structure as `C(S₄)−2√13`
 
-[opera-sieve](https://github.com/DavidFox998/opera-sieve) — Methodology** — Closes via `methodology.py` + datatables — defines `S_14` and `S_alpha0`, organizes sieving methods
+**[navier-stokes](https://github.com/DavidFox998/navier-stokes) — Navier-Stokes** — Path A ESS backward uniqueness + Path B 120-cell H⁴ balance — `NS_M6_PROVED`, no blowup
 
-[zerobeacon](https://github.com/DavidFox998/zerobeacon) — BRAIN** — Closes via verification — 1000 tools for AI Ecommerce, collision-free-swarming, `m4.out = Complete: True` verifies all 19
+**[zerobeacon](https://github.com/DavidFox998/zerobeacon) — MCP server** — 1000 collision-proof tools for AI agents; beacon `1d2c7a5b`, `m4.out = Complete: True`
 
-[pistus-theoria](https://github.com/DavidFox998/pistus-theoria) — ARCHIVE** — Closes via SHA — pdf server, oracle server, certification house, `OperaNumerorum_MasterEquations.pdf SHA 7f6b31b4...`
+---
 
-ORCID iD: [0009-0008-1290-6105](https://orcid.org/0009-0008-1290-6105) — Brain: [zerobeacon](https://github.com/DavidFox998/zerobeacon) — Archive: [pistus-theoria](https://github.com/DavidFox998/pistus-theoria)
-
+ORCID: [0009-0008-1290-6105](https://orcid.org/0009-0008-1290-6105) · Archive: [pistus-theoria](https://github.com/DavidFox998/pistus-theoria) — `OperaNumerorum_MasterEquations.pdf SHA 7f6b31b4`
 ## Build — Lean 4.15.0
 
 ```bash
@@ -93,4 +91,10 @@ lake exe cache get
 lake build # 2381 mods ~90s GREEN
 lake build PoincareSpectral.Experimental.C10
 lake build PoincareSpectral.Experimental.C13_MellinIntegral # C13 closes integra
-## 
+##
+## Author
+
+David J. Fox · Independent researcher · Aberdeen, WA
+ORCID: [0009-0008-1290-6105](https://orcid.org/0009-0008-1290-6105) · Opera Numerorum — 2026
+
+```
