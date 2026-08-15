@@ -1,5 +1,8 @@
 # poincare-spectral — Formal Spectral Gap for the Poincaré Homology Sphere — CLOSED via q=1/8 tail
 
+> **Opera Numerorum ensemble** — 19 repos · chain `7472f4e5` · [REPOS.md →](https://github.com/DavidFox998/rh-p5-bridge-14/blob/main/REPOS.md)
+
+
 **David J. Fox** — ORCID 0009-0008-1290-6105 — Opera Numerorum — July 2026
 Lean 4.15.0 / Mathlib v4.15.0 — CI #53 `ce5915d` GREEN → C13 GREEN — 2381 modules
 
