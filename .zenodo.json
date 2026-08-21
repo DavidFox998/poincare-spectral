@@ -1,14 +1,16 @@
 {
-  "title": "Poincaré Spectral Tower — Formal Proof in Lean 4.12.0",
-  "description": "Formalized analytic core of Poincaré homology sphere spectral gap: Bessel bounds on S³ (rational 324/(7*8^24) ≤1e-20, Real.exp r²<3/2), geometric Weyl tail q=1/8 with tail_26=q^26/(1-q)≤1e-20 and Summable, conductor positivity gap=1-tail>0, Mellin transform of Bessel K_ν as mellinBessel ν s =2^{s-2} Γ((s+ν)/2)Γ((s-ν)/2) with positivity, and spectral zeta model Summable (q^(2)^n). 11 files GREEN, 2381 modules, 56 workflow runs, CI #53 ce5915d. Built with Lean 4.12.0 + mathlib4. Main theorems: C10_Main.poincare_main, poincare_spectral_determinant_pos. Candidate contributions to Mathlib.Analysis.SpecialFunctions.Bessel.Mellin.",
+  "title": "Poincar\u00e9 Spectral Tower \u2014 Formal Proof in Lean 4",
+  "description": "Formalized analytic core of Poincar\u00e9 homology sphere spectral gap: Bessel bounds on S\u00b3, geometric Weyl tail, conductor positivity, Mellin transform of Bessel K_\u03bd, and spectral zeta model. 11 files GREEN, 2381 modules. CI green. Built with Lean 4.12.0 + Mathlib4. Part of Opera Numerorum.",
   "creators": [
     {
       "name": "Fox, David J.",
-      "affiliation": "Independent Researcher",
-      "orcid": "0009-0000-0000-0000"
+      "orcid": "0009-0008-1290-6105",
+      "affiliation": "Opera Numerorum"
     }
   ],
   "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
   "keywords": [
     "Lean4",
     "mathlib4",
@@ -20,15 +22,7 @@
     "Gamma function",
     "spectral zeta",
     "Weyl law",
-    "conductor",
-    "proof assistant"
-  ],
-  "upload_type": "software",
-  "access_right": "open",
-  "communities": [
-    {
-      "identifier": "leanprover-community"
-    }
+    "opera-numerorum"
   ],
   "related_identifiers": [
     {
