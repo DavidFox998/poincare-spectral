@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Poincaré Homology Sphere — Spectral Gap Formalization"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Fox
+    given-names: David
+    orcid: "https://orcid.org/0009-0008-1290-6105"
+    affiliation: "Opera Numerorum"
+license: MIT
+repository-code: "https://github.com/DavidFox998/poincare-spectral"
+keywords:
+  - "Poincaré homology sphere"
+  - "spectral gap"
+  - "S³/I*"
+  - "Lean 4"
+  - "formal verification"
+  - "geometric analysis"
+  - "Opera Numerorum"
+abstract: "Lean 4 formalization of the Lean 4 formalization of the spectral gap for the Poincaré homology sphere S³/I*. This repository is part of David Fox's Opera Numerorum ensemble."
